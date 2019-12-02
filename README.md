@@ -1,2 +1,2 @@
 # ReactFirestoreIntro
-A repository for my exploration with React, Firebase, NoSQL database.
+A repository for my exploration with React + Firebase/Firestore. NoSQL Database.
