@@ -9,10 +9,11 @@ class SignIn extends Component {
        this.state({
            [s.target.id]: s.target.value
        });
+       // this logs the ENTIRE STATE, useless tester...
+       console.log(this.state);
     }
     handleChange = (s) => {
         s.preventDefault();
-        console.log(this.state);
     }
     render() {
         return (
