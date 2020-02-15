@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectActions'
 import { Redirect } from 'react-router-dom'
+import {Form, Button, InputGroup, FormControl} from 'react-bootstrap'
 
 class CreateProject extends Component {
   state = {
@@ -24,21 +25,23 @@ class CreateProject extends Component {
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="container">
-        <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Create a New Project</h5>
-          <div className="input-field">
-            <input type="text" id='title' onChange={this.handleChange} />
-            <label htmlFor="title">Project Title</label>
-          </div>
-          <div className="input-field">
-            <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">Project Content</label>
-          </div>
-          <div className="input-field">
-            <button className="btn pink lighten-1">Create</button>
-          </div>
-        </form>
+        <Form onSubmit={this.handleSubmit} className="white">
+        <h5 className="grey-text text-darken-3">Create New Project</h5>
+          <Form.Group controlId="title" onChange={this.handleChange}>
+            <Form.Control type="text" placeholder="Project Title" />
+            <Form.Text className="text-muted">
+            </Form.Text>
+          </Form.Group>
+          <br/>
+          <Form.Group controlId="content" onChange={this.handleChange}>
+            <Form.Control type="text" placeholder="Project Content"/>
+          </Form.Group>
+          <Button className="btn blue lighten-1" type="submit">
+            Create
+          </Button>
+      </Form>
       </div>
+      
     )
   }
 }

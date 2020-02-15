@@ -12,7 +12,7 @@ const Navbar = (props) => {
   return (
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
-        <Link to='/' className="brand-logo">ReactFireStore</Link>
+        <Link to='/' className="brand-logo">React-Redux-Firestore</Link>
         {links}
       </div>
     </nav>
