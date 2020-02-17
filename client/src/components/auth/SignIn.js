@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { signIn } from '../../store/actions/authActions'
 import { Redirect } from 'react-router-dom'
-
+import {Form, Button} from 'react-bootstrap'
 class SignIn extends Component {
   state = {
     email: '',
@@ -22,23 +22,21 @@ class SignIn extends Component {
     if (auth.uid) return <Redirect to='/' /> 
     return (
       <div className="container">
-        <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Sign In</h5>
-          <div className="input-field">
-            <label htmlFor="email">Email</label>
-            <input type="email" id='email' onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-            <label htmlFor="password">Password</label>
-            <input type="password" id='password' onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
-            <div className="center red-text">
-              { authError ? <p>{authError}</p> : null }
-            </div>
-          </div>
-        </form>
+
+        <Form onSubmit={this.handleSubmit} className="white">
+        <h5 className="grey-text text-darken-3">Sign In</h5>
+          <Form.Group controlId="email" onChange={this.handleChange}>
+            <Form.Control type="email" placeholder="Email" />
+          </Form.Group>
+          <br/>
+          <Form.Group controlId="password" onChange={this.handleChange}>
+            <Form.Control type="password" placeholder="Password"/>
+            { authError ? <Form.Text className="red-text"> {authError} </Form.Text> : null }
+          </Form.Group>
+          <Button className="btn blue lighten-1" type="submit">
+            Login
+          </Button>
+      </Form>
       </div>
     )
   }

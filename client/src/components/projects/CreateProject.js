@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectActions'
 import { Redirect } from 'react-router-dom'
-import {Form, Button, InputGroup, FormControl} from 'react-bootstrap'
+import {Form, Button} from 'react-bootstrap'
 
 class CreateProject extends Component {
   state = {
