@@ -18,7 +18,7 @@ exports.projectCreated = functions.firestore
     .onCreate(doc => {
         const project = doc.data();
         const notification = {
-            content: 'Added new project',
+            content: 'Added a new post',
             user:   `${project.authorFirstName} ${project.authorLastName}`,
             time: admin.firestore.FieldValue.serverTimestamp()
         }
@@ -31,7 +31,7 @@ exports.projectCreated = functions.firestore
                 .doc(user.uid).get().then(doc => {
                     const newUser = doc.data();
                     const notification = {
-                        content: 'Welcome to the Site!',
+                        content: 'Welcome, ' + `${newUser.firstName}`,
                         user: `${newUser.firstName} ${newUser.lastName}`,
                         time: admin.firestore.FieldValue.serverTimestamp()
                     }

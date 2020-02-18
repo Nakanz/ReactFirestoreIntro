@@ -26,15 +26,15 @@ class CreateProject extends Component {
     return (
       <div className="container">
         <Form onSubmit={this.handleSubmit} className="white">
-        <h5 className="grey-text text-darken-3">Create New Project</h5>
+        <h5 className="grey-text text-darken-3">Write a Post/Project</h5>
           <Form.Group controlId="title" onChange={this.handleChange}>
-            <Form.Control type="text" placeholder="Project Title" />
+            <Form.Control type="text" placeholder="Title" />
             <Form.Text className="text-muted">
             </Form.Text>
           </Form.Group>
           <br/>
           <Form.Group controlId="content" onChange={this.handleChange}>
-            <Form.Control type="text" placeholder="Project Content"/>
+            <Form.Control type="text" placeholder="Content"/>
           </Form.Group>
           <Button className="btn blue lighten-1" type="submit">
             Create
