@@ -21,7 +21,18 @@ const authReducer = (state = initState, action) => {
     case 'SIGNOUT_SUCCESS':
       console.log('signout success');
       return state;
-
+    case 'Firestore_success':
+      console.log('Firestore success')
+      return {
+        ...state,
+        authError: null
+      }
+    case 'Firestore_Error':
+      console.log('Firestore error');
+      return {
+        ...state,
+        authError: action.err.message
+      }
     case 'SIGNUP_SUCCESS':
       console.log('signup success')
       return {
