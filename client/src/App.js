@@ -6,7 +6,8 @@ import ProjectDetails from './components/projects/ProjectDetails'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
-
+import AllProjects from './components/all-projects/AllProjects'
+import AllNotifications from './components/all-notifications/AllNotifications';
 class App extends Component {
   render() {
     return (
@@ -19,6 +20,8 @@ class App extends Component {
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProject} />
+            <Route path='/all-posts' component={AllProjects} />
+            <Route path='/all-notifications' component={AllNotifications} />
           </Switch>
         </div>
       </BrowserRouter>
