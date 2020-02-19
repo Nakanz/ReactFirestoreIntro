@@ -13,6 +13,8 @@ class AllProjects extends Component {
     
   render() {
     const { projects, auth} = this.props;
+    // FOR MDBDataTable 
+    // see this link for dynamic population of column/row fields https://mdbootstrap.com/docs/react/tables/datatables/
     const data = {
         columns: [
           {
